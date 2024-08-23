@@ -13,3 +13,17 @@ branches:
   only:
     - main
     - feature
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "Frontend"
+  env: "Frontend-env"
+  bucket_name: "elasticbeanstalk-us-east-1-933377854955"
+  bucket_path: "Frontend"
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: "$AWS_SECRET_KEY"
+
+# http://frontend-env.eba-ffxrtq5k.us-east-1.elasticbeanstalk.com/
